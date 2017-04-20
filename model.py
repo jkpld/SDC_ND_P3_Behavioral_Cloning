@@ -131,6 +131,11 @@ def truncated_normal(n, sigma=1, mu=0):
     return x + mu
 
 def random_shadow(img):
+
+    # The idea for shadow augmentation came from 
+    # https://hackernoon.com/training-a-deep-learning-model-to-steer-a-car-in-99-lines-of-code-ba94e0456e6a
+    # https://chatbotslife.com/using-augmentation-to-mimic-human-driving-496b569760a9
+
     # Add wedge like shadow
     xb = rand(2)*img.shape[1]
     G = np.mgrid[0:img.shape[0], 0:img.shape[1]]
