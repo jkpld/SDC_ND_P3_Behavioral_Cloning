@@ -53,7 +53,7 @@ I modified the original `drive.py` file to correctly import my model and to also
 
 #### 1. Solution Design Approach
 
-I the design of the model, I first started with a very simple model with maybe three convolution layers followed by a few fully connected. Though this model had a low mean square error (mse), the car oscillated strongly when testing on the first track and it was not able to stay on the road.
+In designing the model, I first started with a very simple model with maybe three convolution layers followed by a few fully connected. Though this model had a low mean square error (mse), the car oscillated strongly when testing on the first track and it was not able to stay on the road.
 
 I next tried a larger architecture, like that from the Nvidia paper; however, with this model, the car could not successfully stay on the road for both tracks 1 and 2. I tried modifying this model by using a recurrent neural network layer (LSTM) before the final output (and then modified the drive.py file to give multiple images to the model); however, this model also failed. In both of these models, I also used the car speed as in imput to the fully connected (or LSTM) layer before the network output. I included the speed because when testing the models, I noticed that the speed of the car when collecting training data and the speed of the car when testing, which is set in the drive.py file, should be the same. When I collected training with a speed of 30 and then tested at 9, the car would make too large adjustments, and when training at 9 and testing at higher speeds it would adjust too slow.
 
