@@ -97,5 +97,9 @@ I also add a small normally distributed random number to the steering angle (sig
 **Training:**
 I split the data into 80/20 training/validation sets. I then fit the network with the adam optimizer for 5 epochs. Each epoch went through all the training images using batches of 64 frames, and the data was shuffled between each epoch.
 
+### Result
+
+The car successfully stays on the road for both tracks; however, on track 1, the car oscillates back and forth a bit. I found that if I trained the network for a few extra epochs that the oscillation amplitude decreases, but the car no longer stays on the road in track two. So further modification of either the network, the parameters, or the training data would be necessary to get smooth driving on both tracks.
+
 ### Summary
 I used an Inception based CNN to train a car to drive _both_ of the Udacity Simulator tracks without any tire leaving the road. I used translation, rotation, flipping, and the addition of fake shadows to augment the data I collected, and I used a local brightness correction for normalizing the images.
